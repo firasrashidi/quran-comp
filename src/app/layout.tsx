@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import { Amiri } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import { LocaleProvider } from "@/lib/locale-context";
 import "./globals.css";
 
@@ -32,6 +33,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${amiri.variable} font-sans antialiased`}
       >
         <LocaleProvider>{children}</LocaleProvider>
+        <Analytics />
       </body>
     </html>
   );
